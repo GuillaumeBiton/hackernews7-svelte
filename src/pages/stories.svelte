@@ -24,8 +24,12 @@
       </AccordionContent>
     </ListItem>
 	  {/each}
-    <ListItem title="Load More ..." on:click={NextPage}></ListItem>
   </List>
+  {#if itemsCount < 299}
+  <Block><Row>
+  <Col><Button on:click={NextPage}>Load More ...</Button></Col>
+  </Row></Block>
+  {/if}
   {:else}
     <div class="preloader-backdrop"></div>
       <div class="preloader-modal">
@@ -44,7 +48,8 @@
     Col,
     Button,
     Preloader,
-    Link
+    Link,
+    Block
   } from 'framework7-svelte';
 
   let page = 1;
@@ -52,6 +57,7 @@
   let currentItem;
   
   $: getStories(page);
+  $: itemsCount = (items) ? items.length : 0;
 
   async function getStories(page) {
         const res = await fetch(`https://node-hnapi.herokuapp.com/news?page=${page}`);
