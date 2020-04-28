@@ -3,6 +3,6 @@
     "short_name": "hn7",
     "description": "Framework7 HackerNews web app",
     "lang": "en-US",
-    "start_url": "/",
+    "start_url": "/hackernews7-svelte/",
     "display": "standalone"
 } 
