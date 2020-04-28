@@ -2,9 +2,11 @@
   <!-- Top Navbar -->
   <Navbar large title={item.title} backLink="Back"/>
   <!-- Page content -->
-  <p>{item.title}</p>
-  <Link href={item.url} external>{item.domain}</Link>
-  <p>{pluralize(item.points, 'point')} by {item.user}, {item.time_ago}</p>
+  <Block>
+    <p>{item.title}</p>
+    <Link href={item.url} external>{item.domain}</Link>
+    <p>{pluralize(item.points, 'point')} by {item.user}, {item.time_ago}</p>
+  </Block>
   {#if comments}
   {#each comments as comment}
     <Comment {comment}/>
