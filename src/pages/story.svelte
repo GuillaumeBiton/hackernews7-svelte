@@ -34,7 +34,7 @@
   $: getStory(item.id);
   
   async function getStory(id) {
-        const res = await fetch(`http://node-hnapi.herokuapp.com/item/${id}`);
+        const res = await fetch(`https://node-hnapi.herokuapp.com/item/${id}`);
         const data = await res.json();
         comments = (comments) ? [] : data.comments;
     }

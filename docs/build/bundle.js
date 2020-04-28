@@ -70961,7 +70961,7 @@ var app = (function () {
   	let comments;
 
   	async function getStory(id) {
-  		const res = await fetch(`http://node-hnapi.herokuapp.com/item/${id}`);
+  		const res = await fetch(`https://node-hnapi.herokuapp.com/item/${id}`);
   		const data = await res.json();
   		$$invalidate(1, comments = comments ? [] : data.comments);
   	}
