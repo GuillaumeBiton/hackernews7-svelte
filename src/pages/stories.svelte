@@ -1,4 +1,8 @@
-<Page name="stories">
+<Page name="stories" 
+  infinite
+  infiniteDistance={50}
+  infinitePreloader={showPreloader}
+  onInfinite={loadMore}>
   <!-- Top Navbar -->
   <Navbar large title="HackerNews7" />
   <!-- Page content -->
@@ -25,11 +29,6 @@
     </ListItem>
 	  {/each}
   </List>
-  {#if itemsCount < 299}
-  <Block><Row>
-  <Col><Button on:click={NextPage}>Load More ...</Button></Col>
-  </Row></Block>
-  {/if}
   {:else}
     <div class="preloader-backdrop"></div>
       <div class="preloader-modal">
@@ -55,21 +54,26 @@
   let page = 1;
   let items;
   let currentItem;
-  
+  // let allowInfinite = true;
+  let showPreloader = false;
+
   $: getStories(page);
-  $: itemsCount = (items) ? items.length : 0;
+  $: showPreloader = (items) ? (items.length < 299) ? true : false : false;
 
   async function getStories(page) {
         const res = await fetch(`https://node-hnapi.herokuapp.com/news?page=${page}`);
         const data = await res.json();
         items = (items) ? items.concat(data) : data;
+        console.log(`call ${page}`)
     }
 
   function pluralize(prop, text) {
     return `${prop} ${prop < 2 ? text : text + 's'}`
   }
   
-  function NextPage() {
+  function loadMore() {
+    if (!showPreloader) return;
+    
     page += 1;
   }
 </script>
