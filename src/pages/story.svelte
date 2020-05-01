@@ -32,8 +32,9 @@
 
     export let item;
     let comments;
-  
-  $: getStory(item.id);
+    let id = item.id;
+
+  $: getStory(id);
   
   async function getStory(id) {
         const res = await fetch(`https://node-hnapi.herokuapp.com/item/${id}`);
