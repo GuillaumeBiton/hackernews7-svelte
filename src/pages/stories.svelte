@@ -64,7 +64,6 @@
         const res = await fetch(`https://node-hnapi.herokuapp.com/news?page=${page}`);
         const data = await res.json();
         items = (items) ? items.concat(data) : data;
-        console.log(`call ${page}`)
     }
 
   function pluralize(prop, text) {
