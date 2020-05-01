@@ -11,8 +11,8 @@ import Framework7, { Device, Request, Utils } from 'framework7/framework7-lite.e
 // import Preloader from 'framework7/components/preloader/preloader';
 // import Progressbar from 'framework7/components/progressbar/progressbar';
 // import Sortable from 'framework7/components/sortable/sortable';
-// import Swipeout from 'framework7/components/swipeout/swipeout';
-import Accordion from 'framework7/components/accordion/accordion';
+import Swipeout from 'framework7/components/swipeout/swipeout';
+// import Accordion from 'framework7/components/accordion/accordion';
 // import ContactsList from 'framework7/components/contacts-list/contacts-list';
 // import VirtualList from 'framework7/components/virtual-list/virtual-list';
 // import ListIndex from 'framework7/components/list-index/list-index';
@@ -66,8 +66,8 @@ Framework7.use([
   // Preloader,
   // Progressbar,
   // Sortable,
-  // Swipeout,
-  Accordion,
+  Swipeout,
+  // Accordion,
   // ContactsList,
   // VirtualList,
   // ListIndex,

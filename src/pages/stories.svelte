@@ -7,25 +7,16 @@
   <Navbar large title="HackerNews7" />
   <!-- Page content -->
   {#if items}
-  <List accordionList>
+  <List mediaList>
 	  {#each items as item, i}
-    <ListItem title={item.title} accordionItem>
+    <ListItem swipeout title={item.title} href="/item/{item.id}" routeProps={{item}}>
       <i slot="media">{i + 1}</i>
       <span slot="footer">
         {pluralize(item.points, 'point')} by {item.user} {item.time_ago}
       </span>
-      <AccordionContent>
-      <Row>
-      <Col>
-        <Button><a href={item.url} class="external">Visit Site</a></Button>
-      </Col>
-      <Col>
-        <Button>{#if item.comments_count}
-          <Link href="/item/{item.id}" routeProps={{item}}>{pluralize(item.comments_count, 'comment')}</Link>
-        {/if}</Button>
-      </Col>
-        </Row>
-      </AccordionContent>
+      <SwipeoutActions left>
+        <SwipeoutButton overswipe color="green"><Link href={item.url} color="white" external>Visit Site</Link></SwipeoutButton>
+      </SwipeoutActions>
     </ListItem>
 	  {/each}
   </List>
@@ -42,13 +33,12 @@
     Navbar,
     List,
     ListItem,
-    AccordionContent,
-    Row,
-    Col,
     Button,
     Preloader,
     Link,
-    Block
+    Block,
+    SwipeoutActions,
+    SwipeoutButton
   } from 'framework7-svelte';
 
   let page = 1;
