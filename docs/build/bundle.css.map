@@ -5,7 +5,7 @@
     "../../Comment.svelte"
   ],
   "sourcesContent": [
-    "<Block strong>\n    <BlockHeader>{comment.user} {comment.time_ago}</BlockHeader>\n\n\t<p>{@html comment.content}</p>\n\n\t{#each comment.comments as child}\n\t\t<svelte:self comment={child}/>\n\t{/each}\n\n  </Block>\n<script>\n    import {\n        Block,\n        BlockHeader\n    } from 'framework7-svelte';\n\n    export let comment;\n\n    /* bug : external class on link in content */\n    //document.querySelectorAll('a').forEach((node) => { node.classList.add('external') });\n</script>\n<style>\n/* bug : long text in content */\np {\n    overflow: auto;\n}\n</style>"
+    "<Block strong>\n    <BlockHeader>{comment.user} {comment.time_ago}</BlockHeader>\n\n\t<p>{@html comment.content}</p>\n\n\t{#each comment.comments as child}\n\t\t<svelte:self comment={child}/>\n\t{/each}\n\n  </Block>\n<script>\n    import {\n        Block,\n        BlockHeader\n    } from 'framework7-svelte';\n\n    export let comment;\n\n    /* bug : external class on link in content */\n    //document.querySelectorAll('a').forEach((node) => { node.classList.add('external') });\n</script>\n<style>\n/* bug : long text in content */\np {\n    overflow: auto;\n}\n\n/* bug: not apply to component */\n.block-strong {\n    padding-bottom: none;\n}\n</style>"
   ],
   "names": [],
   "mappings": "AAuBA,CAAC,eAAC,CAAC,AACC,QAAQ,CAAE,IAAI,AAClB,CAAC"
