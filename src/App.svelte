@@ -1,7 +1,7 @@
 <App params={ f7params }>
 
   <!-- Your main view, should have "view-main" class -->
-  <View main class="safe-areas" url="/" />
+  <View main class="safe-areas" url="/" masterDetailBreakpoint={800} />
 
 </App>
 <script>
@@ -24,3 +24,8 @@
     document.body.classList.add('standalone');
   }
 </script>
+<style>
+:global(body) {
+    --f7-page-master-width: 33%;
+}
+</style>

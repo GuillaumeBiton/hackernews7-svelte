@@ -25,8 +25,7 @@ p {
     overflow: auto;
 }
 
-/* bug: not apply to component */
-.block-strong {
-    padding-bottom: none;
+:global(.block.block-strong) {
+    padding-bottom: 0px;
 }
 </style>

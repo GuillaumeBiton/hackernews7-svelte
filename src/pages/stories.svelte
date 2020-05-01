@@ -9,7 +9,7 @@
   {#if items}
   <List mediaList>
 	  {#each items as item, i}
-    <ListItem swipeout title={item.title} href="/item/{item.id}" routeProps={{item}}>
+    <ListItem swipeout title={item.title} href="/item/{item.id}" routeProps={{item}} reloadDetail={true}>
       <i slot="media">{i + 1}</i>
       <span slot="footer">
         {pluralize(item.points, 'point')} by {item.user} {item.time_ago}

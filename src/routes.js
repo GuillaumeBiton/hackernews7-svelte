@@ -5,11 +5,14 @@ var routes = [
   {
     path: '/',
     component: StoriesPage,
+    master: true,
+    detailRoutes: [
+      {
+        path: '/item/:id',
+        component: StoryPage,
+      },
+    ]
   },
-  {
-    path: '/item/:id',
-    component: StoryPage
-  }
 ];
 
 export default routes;
