@@ -40,7 +40,8 @@
     SwipeoutActions,
     SwipeoutButton
   } from 'framework7-svelte';
-
+  import { pluralize } from '../utils';
+  
   let page = 1;
   let items;
   let currentItem;
@@ -55,10 +56,6 @@
         const data = await res.json();
         items = (items) ? items.concat(data) : data;
     }
-
-  function pluralize(prop, text) {
-    return `${prop} ${prop < 2 ? text : text + 's'}`
-  }
   
   function loadMore() {
     if (!showPreloader) return;

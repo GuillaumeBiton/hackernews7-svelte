@@ -27,7 +27,7 @@
         BlockHeader,
         Preloader
     } from 'framework7-svelte';
-    
+    import { pluralize } from '../utils';
     import Comment from '../components/Comment.svelte';
 
     export let item;
@@ -41,10 +41,6 @@
         const data = await res.json();
         comments = (comments) ? [] : data.comments;
     }
-
-  function pluralize(prop, text) {
-    return `${prop} ${prop < 2 ? text : text + 's'}`
-  }
 </script>
 <style>
 :global(.view-master-detail .navbar-master-detail-root .link.back, .view-master-detail .page-master-detail-root .navbar .link.back) {
