@@ -2,11 +2,13 @@
   "version": 3,
   "file": "bundle.css",
   "sources": [
+    "../../App.svelte",
     "../../Comment.svelte"
   ],
   "sourcesContent": [
-    "<Block strong>\n    <BlockHeader>{comment.user} {comment.time_ago}</BlockHeader>\n\n\t<p>{@html comment.content}</p>\n\n\t{#each comment.comments as child}\n\t\t<svelte:self comment={child}/>\n\t{/each}\n\n  </Block>\n<script>\n    import {\n        Block,\n        BlockHeader\n    } from 'framework7-svelte';\n\n    export let comment;\n\n    /* bug : external class on link in content */\n    //document.querySelectorAll('a').forEach((node) => { node.classList.add('external') });\n</script>\n<style>\n/* bug : long text in content */\np {\n    overflow: auto;\n}\n\n/* bug: not apply to component */\n.block-strong {\n    padding-bottom: none;\n}\n</style>"
+    "<App params={ f7params }>\n\n  <!-- Your main view, should have \"view-main\" class -->\n  <View main class=\"safe-areas\" url=\"/\" masterDetailBreakpoint={800} />\n\n</App>\n<script>\n  import {\n    App,\n    View,\n  } from 'framework7-svelte';\n\n  import routes from './routes';\n\n  // Framework7 Parameters\n  let f7params = {\n    name: 'stock', // App name\n    theme: 'auto', // Automatic theme detection\n    autoDarkTheme: true, // Automatic Dark Theme\n    routes: routes, // App routes\n  };\n\n  if (window.navigator.standalone) {\n    document.body.classList.add('standalone');\n  }\n</script>\n<style>\n:global(body) {\n    --f7-page-master-width: 33%;\n}\n</style>",
+    "<Block strong>\n    <BlockHeader>{comment.user} {comment.time_ago}</BlockHeader>\n\n\t<p>{@html comment.content}</p>\n\n\t{#each comment.comments as child}\n\t\t<svelte:self comment={child}/>\n\t{/each}\n\n  </Block>\n<script>\n    import {\n        Block,\n        BlockHeader\n    } from 'framework7-svelte';\n\n    export let comment;\n\n    /* bug : external class on link in content */\n    //document.querySelectorAll('a').forEach((node) => { node.classList.add('external') });\n</script>\n<style>\n/* bug : long text in content */\np {\n    overflow: auto;\n}\n\n:global(.block.block-strong) {\n    padding-bottom: 0px;\n}\n</style>"
   ],
   "names": [],
-  "mappings": "AAuBA,CAAC,eAAC,CAAC,AACC,QAAQ,CAAE,IAAI,AAClB,CAAC"
+  "mappings": "AA2BQ,IAAI,AAAE,CAAC,AACX,sBAAsB,CAAE,GAAG,AAC/B,CAAC;ACND,CAAC,eAAC,CAAC,AACC,QAAQ,CAAE,IAAI,AAClB,CAAC,AAEO,mBAAmB,AAAE,CAAC,AAC1B,cAAc,CAAE,GAAG,AACvB,CAAC"
 }
