@@ -41363,7 +41363,7 @@ var app = (function () {
 
   function get_each_context$4(ctx, list, i) {
   	const child_ctx = ctx.slice();
-  	child_ctx[3] = list[i];
+  	child_ctx[4] = list[i];
   	return child_ctx;
   }
 
@@ -41461,7 +41461,7 @@ var app = (function () {
   			const link_changes = {};
   			if (dirty & /*item*/ 1) link_changes.href = /*item*/ ctx[0].url;
 
-  			if (dirty & /*$$scope, item*/ 65) {
+  			if (dirty & /*$$scope, item*/ 129) {
   				link_changes.$$scope = { dirty, ctx };
   			}
 
@@ -41659,7 +41659,7 @@ var app = (function () {
   	let current;
 
   	const comment = new Comment({
-  			props: { comment: /*comment*/ ctx[3] },
+  			props: { comment: /*comment*/ ctx[4] },
   			$$inline: true
   		});
 
@@ -41673,7 +41673,7 @@ var app = (function () {
   		},
   		p: function update(ctx, dirty) {
   			const comment_changes = {};
-  			if (dirty & /*comments*/ 2) comment_changes.comment = /*comment*/ ctx[3];
+  			if (dirty & /*comments*/ 2) comment_changes.comment = /*comment*/ ctx[4];
   			comment.$set(comment_changes);
   		},
   		i: function intro(local) {
@@ -41762,7 +41762,7 @@ var app = (function () {
   			navbar.$set(navbar_changes);
   			const block_changes = {};
 
-  			if (dirty & /*$$scope, item*/ 65) {
+  			if (dirty & /*$$scope, item*/ 129) {
   				block_changes.$$scope = { dirty, ctx };
   			}
 
@@ -41851,7 +41851,7 @@ var app = (function () {
   		p: function update(ctx, [dirty]) {
   			const page_changes = {};
 
-  			if (dirty & /*$$scope, comments, item*/ 67) {
+  			if (dirty & /*$$scope, comments, item*/ 131) {
   				page_changes.$$scope = { dirty, ctx };
   			}
 
@@ -41889,6 +41889,7 @@ var app = (function () {
   function instance$l($$self, $$props, $$invalidate) {
   	let { item } = $$props;
   	let comments;
+  	let id = item.id;
 
   	async function getStory(id) {
   		const res = await fetch(`https://node-hnapi.herokuapp.com/item/${id}`);
@@ -41919,6 +41920,7 @@ var app = (function () {
   		Comment,
   		item,
   		comments,
+  		id,
   		getStory,
   		pluralize: pluralize$1
   	});
@@ -41926,18 +41928,14 @@ var app = (function () {
   	$$self.$inject_state = $$props => {
   		if ("item" in $$props) $$invalidate(0, item = $$props.item);
   		if ("comments" in $$props) $$invalidate(1, comments = $$props.comments);
+  		if ("id" in $$props) $$invalidate(2, id = $$props.id);
   	};
 
   	if ($$props && "$$inject" in $$props) {
   		$$self.$inject_state($$props.$$inject);
   	}
 
-  	$$self.$$.update = () => {
-  		if ($$self.$$.dirty & /*item*/ 1) {
-  			 getStory(item.id);
-  		}
-  	};
-
+  	 getStory(id);
   	return [item, comments];
   }
 
