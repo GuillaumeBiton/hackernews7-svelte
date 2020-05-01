@@ -27,7 +27,7 @@ export default {
 		}),
 
 		postcss({
-			plugins: []
+			plugins: [],
 		}),
 
 		// If you have external dependencies installed from
