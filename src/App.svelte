@@ -24,6 +24,3 @@
     document.body.classList.add('standalone');
   }
 </script>
-<style>
-
-</style>
