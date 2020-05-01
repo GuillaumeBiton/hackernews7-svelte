@@ -46,3 +46,8 @@
     return `${prop} ${prop < 2 ? text : text + 's'}`
   }
 </script>
+<style>
+:global(.view-master-detail .navbar-master-detail-root .link.back, .view-master-detail .page-master-detail-root .navbar .link.back) {
+  display: none;
+}
+</style>
