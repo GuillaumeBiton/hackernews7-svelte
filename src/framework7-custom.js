@@ -8,7 +8,7 @@ import Framework7, { Device, Request, Utils } from 'framework7/framework7-lite.e
 // import Actions from 'framework7/components/actions/actions';
 // import Sheet from 'framework7/components/sheet/sheet';
 // import Toast from 'framework7/components/toast/toast';
-// import Preloader from 'framework7/components/preloader/preloader';
+import Preloader from 'framework7/components/preloader/preloader';
 // import Progressbar from 'framework7/components/progressbar/progressbar';
 // import Sortable from 'framework7/components/sortable/sortable';
 import Swipeout from 'framework7/components/swipeout/swipeout';
@@ -63,7 +63,7 @@ Framework7.use([
   // Actions,
   // Sheet,
   // Toast,
-  // Preloader,
+  Preloader,
   // Progressbar,
   // Sortable,
   Swipeout,
