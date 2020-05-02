@@ -19,6 +19,7 @@ This demo is developped using [Rollup](http://framework7.io/cli/).
 - [Infinite scroll](https://framework7.io/svelte/page.html#infinite-scroll)
 - [Preloader](https://framework7.io/svelte/preloader.html)
 - [SwipeOut](https://framework7.io/svelte/swipeout.html)
+- [Master-Detail](https://framework7.io/docs/view.html#master-detail)
 
 ## story.svelte
 
