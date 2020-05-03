@@ -1,6 +1,6 @@
 <Page name="stories" 
   infinite
-  infiniteDistance={50}
+  infiniteDistance={30}
   infinitePreloader={showPreloader}
   onInfinite={loadMore}>
   <!-- Top Navbar -->
@@ -45,7 +45,7 @@
   let page = 1;
   let items;
   let currentItem;
-  // let allowInfinite = true;
+  let allowInfinite = true;
   let showPreloader = false;
 
   $: getStories(page);
@@ -55,9 +55,13 @@
         const res = await fetch(`https://node-hnapi.herokuapp.com/news?page=${page}`);
         const data = await res.json();
         items = (items) ? items.concat(data) : data;
+        allowInfinite = true
     }
   
   function loadMore() {
+    if (!allowInfinite) return;
+    allowInfinite = false;
+
     if (!showPreloader) return;
     
     page += 1;
