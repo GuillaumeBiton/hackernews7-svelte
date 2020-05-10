@@ -29,6 +29,11 @@ This demo is developped using [Rollup](http://framework7.io/cli/).
 
 - [svelte:self](https://svelte.dev/docs#svelte_self)
 
+PWA
+---
+
+![LightHouse Score](https://github.com/GuillaumeBiton/hackernews7-svelte/raw/master/lighthouse-pwa-score.png)
+
 License
 -------
 
