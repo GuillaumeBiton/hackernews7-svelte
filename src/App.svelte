@@ -1,5 +1,5 @@
 <App params={ f7params }>
-  <a class="skip-link" href="/">Skip to main</a>
+  <a class="skip-link" href="#">Skip to main</a>
 
   <!-- Your main view, should have "view-main" class -->
   <View main class="safe-areas" url="/" masterDetailBreakpoint={800} />
