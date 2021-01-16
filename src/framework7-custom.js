@@ -1,5 +1,5 @@
 
-import Framework7, { Device, Request, Utils } from 'framework7/framework7-lite.esm';
+import Framework7 from 'framework7/lite';
 // import Appbar from 'framework7/components/appbar/appbar';
 // import Dialog from 'framework7/components/dialog/dialog';
 // import Popup from 'framework7/components/popup/popup';
@@ -8,10 +8,10 @@ import Framework7, { Device, Request, Utils } from 'framework7/framework7-lite.e
 // import Actions from 'framework7/components/actions/actions';
 // import Sheet from 'framework7/components/sheet/sheet';
 // import Toast from 'framework7/components/toast/toast';
-import Preloader from 'framework7/components/preloader/preloader';
+import Preloader from 'framework7/components/preloader/';
 // import Progressbar from 'framework7/components/progressbar/progressbar';
 // import Sortable from 'framework7/components/sortable/sortable';
-import Swipeout from 'framework7/components/swipeout/swipeout';
+import Swipeout from 'framework7/components/swipeout/';
 // import Accordion from 'framework7/components/accordion/accordion';
 // import ContactsList from 'framework7/components/contacts-list/contacts-list';
 // import VirtualList from 'framework7/components/virtual-list/virtual-list';
@@ -32,7 +32,7 @@ import Swipeout from 'framework7/components/swipeout/swipeout';
 // import Grid from 'framework7/components/grid/grid';
 // import Calendar from 'framework7/components/calendar/calendar';
 // import Picker from 'framework7/components/picker/picker';
-import InfiniteScroll from 'framework7/components/infinite-scroll/infinite-scroll';
+import InfiniteScroll from 'framework7/components/infinite-scroll/';
 // import PullToRefresh from 'framework7/components/pull-to-refresh/pull-to-refresh';
 // import Lazy from 'framework7/components/lazy/lazy';
 // import DataTable from 'framework7/components/data-table/data-table';
@@ -111,4 +111,3 @@ Framework7.use([
 ]);
 
 export default Framework7;
-export { Device, Request, Utils };
