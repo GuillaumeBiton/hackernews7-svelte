@@ -1,14 +1,14 @@
 // Import Framework7
-import Framework7 from 'framework7/lite-bundle';
+import Framework7 from './framework7-custom';
 
 // Import Framework7-Svelte Plugin
 import Framework7Svelte from 'framework7-svelte';
 
 // Import Framework7 Styles
-import 'framework7/framework7-bundle.css';
+import '../css/framework7-custom.less';
 
 // Import Icons and App Custom Styles
-import '../css/icons.css';
+// import '../css/icons.css';
 import '../css/app.less';
 
 // Import App Component

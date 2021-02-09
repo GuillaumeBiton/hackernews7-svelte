@@ -5,9 +5,6 @@
     } from 'framework7-svelte';
 
     export let comment;
-
-    /* bug : external class on link in content */
-    //document.querySelectorAll('a').forEach((node) => { node.classList.add('external') });
 </script>
 <Block strong>
     <BlockHeader>{comment.user} {comment.time_ago}</BlockHeader>
