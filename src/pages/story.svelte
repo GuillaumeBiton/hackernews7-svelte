@@ -1,3 +1,27 @@
+<script>
+  import {
+      Page,
+      Navbar,
+      Link,
+      Block,
+      BlockHeader,
+      Preloader
+  } from 'framework7-svelte';
+  import { pluralize } from '../js/utils';
+  import Comment from '../components/comment.svelte';
+
+  export let item;
+  let comments;
+  let id = item.id;
+
+$: getStory(id);
+
+async function getStory(id) {
+      const res = await fetch(`https://node-hnapi.herokuapp.com/item/${id}`);
+      const data = await res.json();
+      comments = (comments) ? [] : data.comments;
+  }
+</script>
 <Page name="story">
   <!-- Top Navbar -->
   <Navbar large title={item.title} backLink="Back"/>
@@ -17,31 +41,7 @@
         <Preloader color="multi"></Preloader>
       </div>
   {/if}
-  </Page>
-<script>
-    import {
-        Page,
-        Navbar,
-        Link,
-        Block,
-        BlockHeader,
-        Preloader
-    } from 'framework7-svelte';
-    import { pluralize } from '../utils';
-    import Comment from '../components/Comment.svelte';
-
-    export let item;
-    let comments;
-    let id = item.id;
-
-  $: getStory(id);
-  
-  async function getStory(id) {
-        const res = await fetch(`https://node-hnapi.herokuapp.com/item/${id}`);
-        const data = await res.json();
-        comments = (comments) ? [] : data.comments;
-    }
-</script>
+</Page>
 <style>
 :global(.view-master-detail .navbar-master-detail-root .link.back, .view-master-detail .page-master-detail-root .navbar .link.back) {
   display: none;

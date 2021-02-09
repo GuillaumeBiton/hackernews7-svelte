@@ -1,4 +1,44 @@
-<Page name="stories" 
+<script>
+    import {
+      Page,
+      Navbar,
+      List,
+      ListItem,
+      Button,
+      Preloader,
+      Link,
+      Block,
+      SwipeoutActions,
+      SwipeoutButton
+    } from 'framework7-svelte';
+    import { pluralize } from '../js/utils';
+    
+    let page = 1;
+    let items;
+    let currentItem;
+    let allowInfinite = true;
+    let showPreloader = false;
+  
+    $: getStories(page);
+    $: showPreloader = (items) ? (items.length < 299) ? true : false : false;
+  
+    async function getStories(page) {
+          const res = await fetch(`https://node-hnapi.herokuapp.com/news?page=${page}`);
+          const data = await res.json();
+          items = (items) ? items.concat(data) : data;
+          allowInfinite = true
+      }
+    
+    function loadMore() {
+      if (!allowInfinite) return;
+      allowInfinite = false;
+  
+      if (!showPreloader) return;
+      
+      page += 1;
+    }
+  </script>
+  <Page name="stories" 
   infinite
   infiniteDistance={30}
   infinitePreloader={showPreloader}
@@ -27,43 +67,3 @@
       </div>
   {/if} 
 </Page>
-<script>
-  import {
-    Page,
-    Navbar,
-    List,
-    ListItem,
-    Button,
-    Preloader,
-    Link,
-    Block,
-    SwipeoutActions,
-    SwipeoutButton
-  } from 'framework7-svelte';
-  import { pluralize } from '../utils';
-  
-  let page = 1;
-  let items;
-  let currentItem;
-  let allowInfinite = true;
-  let showPreloader = false;
-
-  $: getStories(page);
-  $: showPreloader = (items) ? (items.length < 299) ? true : false : false;
-
-  async function getStories(page) {
-        const res = await fetch(`https://node-hnapi.herokuapp.com/news?page=${page}`);
-        const data = await res.json();
-        items = (items) ? items.concat(data) : data;
-        allowInfinite = true
-    }
-  
-  function loadMore() {
-    if (!allowInfinite) return;
-    allowInfinite = false;
-
-    if (!showPreloader) return;
-    
-    page += 1;
-  }
-</script>
