@@ -4,10 +4,8 @@
       Navbar,
       List,
       ListItem,
-      Button,
       Preloader,
       Link,
-      Block,
       SwipeoutActions,
       SwipeoutButton
     } from 'framework7-svelte';
@@ -15,7 +13,6 @@
     
     let page = 1;
     let items;
-    let currentItem;
     let allowInfinite = true;
     let showPreloader = false;
   

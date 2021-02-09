@@ -4,7 +4,6 @@
       Navbar,
       Link,
       Block,
-      BlockHeader,
       Preloader
   } from 'framework7-svelte';
   import { pluralize } from '../js/utils';
