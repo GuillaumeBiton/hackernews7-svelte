@@ -17,8 +17,7 @@
   let f7params = {
     name: 'HackerNews7-svelte', // App name
     theme: 'auto', // Automatic theme detection
-
-
+    autoDarkTheme: true, // Automatic Dark Theme
 
     // App store
     store: store,
