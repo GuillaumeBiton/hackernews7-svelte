@@ -12,7 +12,7 @@
     name: 'HackerNews7-svelte', // App name
     theme: 'auto', // Automatic theme detection
     autoDarkTheme: true, // Automatic Dark Theme
-
+    colorTheme: 'deeporange', // main Theme Color
     // App store
     store: store,
     // App routes
