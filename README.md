@@ -18,6 +18,7 @@ This demo is developped using [Framework7-cli](http://framework7.io/cli/).
 - [Preloader](https://framework7.io/svelte/preloader.html)
 - [SwipeOut](https://framework7.io/svelte/swipeout.html)
 - [Master-Detail](https://framework7.io/docs/view.html#master-detail)
+- [Menu List](https://framework7.io/svelte/menu-list.html)
 
 ## story.svelte
 

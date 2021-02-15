@@ -15,6 +15,7 @@
     let items;
     let allowInfinite = true;
     let showPreloader = false;
+    let selected = null;
   
     $: getStories(page);
     $: showPreloader = (items) ? (items.length < 299) ? true : false : false;
@@ -44,9 +45,9 @@
   <Navbar large title="HackerNews7" />
   <!-- Page content -->
   {#if items}
-  <List mediaList>
+  <List mediaList menuList>
 	  {#each items as item, i}
-    <ListItem swipeout title={item.title} href="/item/{item.id}" routeProps={{item}} reloadDetail={true}>
+    <ListItem swipeout title={item.title} href="/item/{item.id}" routeProps={{item}} reloadDetail={true} selected={selected === item.id} onClick={() => (selected = item.id)}>
       <i slot="media">{i + 1}</i>
       <span slot="footer">
         {pluralize(item.points, 'point')} by {item.user} {item.time_ago}
