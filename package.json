@@ -38,18 +38,18 @@
   ],
   "dependencies": {
     "dom7": "^3.0.0",
-    "framework7": "^6.0.7",
+    "framework7": "^6.0.11",
     "framework7-icons": "^3.0.1",
-    "framework7-svelte": "^6.0.7",
+    "framework7-svelte": "^6.0.11",
     "skeleton-elements": "^3.3.0",
-    "svelte": "^3.32.2",
-    "swiper": "^6.4.11"
+    "svelte": "^3.32.3",
+    "swiper": "^6.4.15"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.13",
-    "@babel/plugin-transform-runtime": "^7.12.15",
-    "@babel/preset-env": "^7.12.13",
-    "@babel/runtime": "^7.12.13",
+    "@babel/core": "^7.13.1",
+    "@babel/plugin-transform-runtime": "^7.13.7",
+    "@babel/preset-env": "^7.13.5",
+    "@babel/runtime": "^7.13.7",
     "babel-loader": "^8.2.2",
     "chalk": "^4.1.0",
     "copy-webpack-plugin": "^7.0.0",
@@ -58,10 +58,10 @@
     "css-loader": "^5.0.2",
     "css-minimizer-webpack-plugin": "^1.2.0",
     "file-loader": "^6.2.0",
-    "html-webpack-plugin": "^5.0.0",
+    "html-webpack-plugin": "^5.2.0",
     "less": "^4.1.1",
     "less-loader": "^8.0.0",
-    "mini-css-extract-plugin": "^1.3.6",
+    "mini-css-extract-plugin": "^1.3.8",
     "ora": "^5.3.0",
     "postcss-loader": "^5.0.0",
     "postcss-preset-env": "^6.7.0",
@@ -70,9 +70,9 @@
     "svelte-loader": "^3.0.0",
     "terser-webpack-plugin": "^5.1.1",
     "url-loader": "^4.1.1",
-    "webpack": "^5.21.2",
+    "webpack": "^5.24.1",
     "webpack-cli": "^4.5.0",
     "webpack-dev-server": "^3.11.2",
-    "workbox-webpack-plugin": "^6.1.0"
+    "workbox-webpack-plugin": "^6.1.1"
   }
 }
