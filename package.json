@@ -43,7 +43,7 @@
     "framework7-svelte": "^6.0.11",
     "skeleton-elements": "^3.3.0",
     "svelte": "^3.32.3",
-    "swiper": "^6.4.15"
+    "swiper": "^6.5.1"
   },
   "devDependencies": {
     "@babel/core": "^7.13.1",
