@@ -14,13 +14,3 @@
     <svelte:self comment={child}/>
     {/each}
 </Block>
-
-<style>
-    p {
-        overflow: auto;
-    }
-
-    :global(.block.block-strong) {
-        padding-bottom: 0px;
-    }
-</style>

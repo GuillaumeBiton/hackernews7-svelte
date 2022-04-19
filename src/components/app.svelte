@@ -19,7 +19,6 @@
     theme: 'auto', // Automatic theme detection
 
 
-
     // App store
     store: store,
     // App routes
