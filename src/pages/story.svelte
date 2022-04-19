@@ -40,9 +40,3 @@
     <div class="preloader-modal"><Preloader color="multi"></Preloader></div>
     {/if}
 </Page>
-
-<style>
-    :global(.view-master-detail .navbar-master-detail-root .link.back, .view-master-detail .page-master-detail-root .link.back) {
-        display: none;
-    }
-</style>
