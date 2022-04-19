@@ -1,3 +1,4 @@
+
 import StoriesPage from '../pages/stories.svelte';
 import StoryPage from '../pages/story.svelte';
 
@@ -10,7 +11,7 @@ var routes = [
       {
         path: '/item/:id',
         component: StoryPage,
-      },
+      }
     ]
   },
 ];

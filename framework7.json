@@ -1,21 +1,14 @@
 {
-  "cwd": "/Users/guillaume/Documents/GitHub/hackernews7-svelte",
+  "cwd": "/workspace/hackernews7-svelte",
   "type": [
     "pwa",
     "web"
   ],
-  "name": "HackerNews7-svelte",
+  "name": "hackernews7-svelte",
   "framework": "svelte",
   "template": "blank",
   "cssPreProcessor": "less",
-  "bundler": "webpack",
-  "webpack": {
-    "developmentSourceMap": true,
-    "productionSourceMap": true,
-    "hashAssets": false,
-    "preserveAssetsPaths": false,
-    "inlineAssets": true
-  },
+  "bundler": "vite",
   "theming": {
     "customColor": false,
     "color": "#007aff",

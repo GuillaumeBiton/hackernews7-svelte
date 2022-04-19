@@ -1,48 +1,48 @@
 <script>
-  import {
-      Page,
-      Navbar,
-      Link,
-      Block,
-      Preloader
-  } from 'framework7-svelte';
-  import { pluralize } from '../js/utils';
-  import Comment from '../components/comment.svelte';
+    import {
+        Page,
+        Navbar,
+        Link,
+        Block,
+        Preloader,
+    } from 'framework7-svelte';
+    import { pluralize } from '../js/utils';
+    import Comment from '../components/comment.svelte';
 
-  export let item;
-  let comments;
-  let id = item.id;
+    export let item;
+    let comments;
+    let id = item.id;
 
-$: getStory(id);
+    $: getStory(id);
 
-async function getStory(id) {
-      const res = await fetch(`https://node-hnapi.herokuapp.com/item/${id}`);
-      const data = await res.json();
-      comments = (comments) ? [] : data.comments;
-  }
+    async function getStory(id) {
+        const res = await fetch(`https://node-hnapi.herokuapp.com/item/${id}`);
+        const data = await res.json();
+        comments = (comments) ? [] : data.comments;
+    }
 </script>
-<Page name="story">
-  <!-- Top Navbar -->
-  <Navbar large title={item.title} backLink="Back"/>
-  <!-- Page content -->
-  <Block>
-    <p>{item.title}</p>
-    <Link href={item.url} external>{item.domain}</Link>
-    <p>{pluralize(item.points, 'point')} by {item.user}, {item.time_ago}</p>
-  </Block>
-  {#if comments}
-  {#each comments as comment}
+
+<Page name='story'>
+    <!-- Navbar -->
+    <Navbar large title={item.title} backlink="Back"></Navbar>
+    <!-- page content -->
+    <Block>
+        <p>{item.title}</p>
+        <Link href={item.url} external>{item.domain}</Link>
+        <p>{pluralize(item.points, 'point')} by {item.user}, {item.time_ago}</p>
+    </Block>
+    {#if comments}
+    {#each comments as comment}
     <Comment {comment}/>
-	{/each}
-  {:else}
+    {/each}
+    {:else}
     <div class="preloader-backdrop"></div>
-      <div class="preloader-modal">
-        <Preloader color="multi"></Preloader>
-      </div>
-  {/if}
+    <div class="preloader-modal"><Preloader color="multi"></Preloader></div>
+    {/if}
 </Page>
+
 <style>
-:global(.view-master-detail .navbar-master-detail-root .link.back, .view-master-detail .page-master-detail-root .navbar .link.back) {
-  display: none;
-}
+    :global(.view-master-detail .navbar-master-detail-root .link.back, .view-master-detail .page-master-detail-root .link.back) {
+        display: none;
+    }
 </style>

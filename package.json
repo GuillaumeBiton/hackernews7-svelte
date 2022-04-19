@@ -1,8 +1,8 @@
 {
   "name": "hackernews7-svelte",
   "private": true,
-  "version": "6.1.0",
-  "description": "HackerNews7-svelte",
+  "version": "7.0.0",
+  "description": "hackernews7-svelte",
   "repository": {
     "type": "git",
     "url": "https://guillaumebiton.github.com/hackernews7-svelte.git"
@@ -24,55 +24,34 @@
   "homepage": "https://guillaumebiton.github.com/hackernews7-svelte",
   "scripts": {
     "start": "npm run dev",
-    "dev": "cross-env NODE_ENV=development webpack serve --config ./build/webpack.config.js --host 0.0.0.0",
-    "build": "cross-env NODE_ENV=production node ./build/build.js",
-    "postinstall": "cpy ./node_modules/framework7-icons/fonts/*.* ./src/fonts/"
+    "dev": "cross-env NODE_ENV=development vite",
+    "build": "cross-env NODE_ENV=production vite build && npx workbox generateSW workbox-config.js",
+    "postinstall": "cpy --flat ./node_modules/framework7-icons/fonts/*.* ./src/fonts/ && cpy --flat ./node_modules/material-icons/iconfont/*.* ./src/fonts/"
   },
   "browserslist": [
-    "Android >= 7",
-    "IOS >= 11",
-    "Safari >= 11",
-    "Chrome >= 49",
-    "Firefox >= 31",
-    "Samsung >= 5"
+    "IOS >= 13",
+    "Safari >= 13",
+    "last 5 Chrome versions",
+    "last 5 Firefox versions",
+    "Samsung >= 12"
   ],
   "dependencies": {
-    "dom7": "^3.0.0",
-    "framework7": "^6.0.11",
-    "framework7-icons": "^3.0.1",
-    "framework7-svelte": "^6.0.11",
-    "skeleton-elements": "^3.3.0",
-    "svelte": "^3.32.3",
-    "swiper": "^6.5.1"
+    "dom7": "^4.0.4",
+    "framework7": "^7.0.1",
+    "framework7-icons": "^5.0.5",
+    "framework7-svelte": "^7.0.1",
+    "material-icons": "^1.10.8",
+    "skeleton-elements": "^4.0.0",
+    "svelte": "^3.47.0",
+    "swiper": "^8.1.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.13.1",
-    "@babel/plugin-transform-runtime": "^7.13.7",
-    "@babel/preset-env": "^7.13.5",
-    "@babel/runtime": "^7.13.7",
-    "babel-loader": "^8.2.2",
-    "chalk": "^4.1.0",
-    "copy-webpack-plugin": "^7.0.0",
-    "cpy-cli": "^3.1.1",
+    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.41",
+    "cpy-cli": "^4.1.0",
     "cross-env": "^7.0.3",
-    "css-loader": "^5.0.2",
-    "css-minimizer-webpack-plugin": "^1.2.0",
-    "file-loader": "^6.2.0",
-    "html-webpack-plugin": "^5.2.0",
-    "less": "^4.1.1",
-    "less-loader": "^8.0.0",
-    "mini-css-extract-plugin": "^1.3.8",
-    "ora": "^5.3.0",
-    "postcss-loader": "^5.0.0",
-    "postcss-preset-env": "^6.7.0",
-    "rimraf": "^3.0.2",
-    "style-loader": "^2.0.0",
-    "svelte-loader": "^3.0.0",
-    "terser-webpack-plugin": "^5.1.1",
-    "url-loader": "^4.1.1",
-    "webpack": "^5.24.1",
-    "webpack-cli": "^4.5.0",
-    "webpack-dev-server": "^3.11.2",
-    "workbox-webpack-plugin": "^6.1.1"
+    "less": "^4.1.2",
+    "postcss-preset-env": "^7.4.3",
+    "vite": "^2.9.5",
+    "workbox-cli": "^6.5.3"
   }
 }
