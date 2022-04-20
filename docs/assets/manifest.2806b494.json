@@ -3,7 +3,7 @@
   "short_name": "hackernews7-svelte",
   "description": "hackernews7-svelte",
   "lang": "en-US",
-  "start_url": "/",
+  "start_url": "/hackernews7-svelte/",
   "display": "standalone",
   "background_color": "#EE350F",
   "theme_color": "#EE350F",
