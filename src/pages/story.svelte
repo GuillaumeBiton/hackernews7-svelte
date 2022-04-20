@@ -24,7 +24,7 @@
 
 <Page name='story'>
     <!-- Navbar -->
-    <Navbar large title={item.title} backlink="Back"></Navbar>
+    <Navbar large title={item.title} backLink="Back"></Navbar>
     <!-- page content -->
     <Block>
         <p>{item.title}</p>
