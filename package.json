@@ -42,7 +42,7 @@
     "framework7-svelte": "^7.0.1",
     "material-icons": "^1.10.8",
     "skeleton-elements": "^4.0.0",
-    "svelte": "^3.47.0",
+    "svelte": "^3.49.0",
     "swiper": "^8.1.1"
   },
   "devDependencies": {
